@@ -3,7 +3,7 @@ package jp.mappiekochi.sample.firstmssqlproject.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.util.Date;
+import java.util.Calendar;
 
 @Data
 @Entity
@@ -17,7 +17,7 @@ public class Customer {
     @Column(name = "NameStyle", length = 1, nullable = false)
     private String nameStyle;
 
-    @Column(name = "title", length = 8)
+    @Column(name = "Title", length = 8)
     private String title;
 
     @Column(name = "FirstName", length = 100, nullable = false)
@@ -55,5 +55,5 @@ public class Customer {
     private String rowguid;
 
     @Column(name = "ModifiedDate", nullable = false)
-    private Date modifiedDate;
+    private Calendar modifiedDate;
 }
