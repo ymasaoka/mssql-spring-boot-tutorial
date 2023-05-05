@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<head>
+    <title th:text="${title}"></title>
+    <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container">
+<h1 class="display-4 mb-4" th:text="${title}"></h1>
+<p th:text="${msg}"></p>
+
+<form method="post" action="/edit" th:object="${formModel}">
+    <div class="mb-3">
+        <label for="customerId" class="form-label">Customer ID</label>
+        <input type="text" class="form-control" name="customerId" th:value="*{customerId}" readonly />
+    </div>
+    <input type="hidden" name="nameStyle" th:value="*{nameStyle}" />
+    <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" class="form-control" name="title" th:value="*{title}" />
+    </div>
+    <div class="mb-3">
+        <label for="firstName" class="form-label">First Name</label>
+        <input type="text" class="form-control" name="firstName" th:value="*{firstName}" />
+    </div>
+    <div class="mb-3">
+        <label for="middleName" class="form-label">Middle Name</label>
+        <input type="text" class="form-control" name="middleName" th:value="*{middleName}" />
+    </div>
+    <div class="mb-3">
+        <label for="lastName" class="form-label">Last Name</label>
+        <input type="text" class="form-control" name="lastName" th:value="*{lastName}" />
+    </div>
+    <div class="mb-3">
+        <label for="suffix" class="form-label">Suffix</label>
+        <input type="text" class="form-control" name="suffix" th:value="*{suffix}" />
+    </div>
+    <div class="mb-3">
+        <label for="companyName" class="form-label">Company Name</label>
+        <input type="text" class="form-control" name="companyName" th:value="*{companyName}" />
+    </div>
+    <div class="mb-3">
+        <label for="salesPerson" class="form-label">Sales Person</label>
+        <input type="text" class="form-control" name="salesPerson" th:value="*{salesPerson}" />
+    </div>
+    <div class="mb-3">
+        <label for="phone" class="form-label">Phone</label>
+        <input type="tel" class="form-control" name="phone" th:value="*{phone}" />
+    </div>
+    <div class="mb-3">
+        <label for="emailAddress" class="form-label">Email Address</label>
+        <input type="email" class="form-control" name="emailAddress" th:value="*{emailAddress}" />
+    </div>
+    <div class="mb-3">
+        <label for="passwordHash" class="form-label">PasswordHash</label>
+        <input type="password" class="form-control" name="passwordHash" th:value="*{passwordHash}" readonly />
+    </div>
+    <div class="mb-3">
+        <label for="passwordSalt" class="form-label">PasswordSalt</label>
+        <input type="password" class="form-control" name="passwordSalt" th:value="*{passwordSalt}" readonly />
+    </div>
+    <div class="mb-3">
+        <label for="text" class="form-label">rowguid</label>
+        <input type="text" class="form-control" name="rowguid" th:value="*{rowguid}" readonly />
+    </div>
+    <input type="submit" class="btn btn-primary" value="Update" />
+</form>
+</body>
+</html>
