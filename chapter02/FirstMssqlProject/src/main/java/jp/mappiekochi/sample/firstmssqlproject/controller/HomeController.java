@@ -31,7 +31,7 @@ public class HomeController {
     public ModelAndView create(ModelAndView mav) {
         mav.setViewName("create");
         mav.addObject("title", "Customer 新規作成");
-        mav.addObject("mav", "新しい Customer 情報を登録します。");
+        mav.addObject("msg", "新しい Customer 情報を登録します。");
         Customer data = new Customer();
         mav.addObject("formModel", data);
         return mav;
