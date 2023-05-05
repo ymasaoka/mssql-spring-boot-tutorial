@@ -38,6 +38,7 @@ public class HomeController {
     }
 
     @RequestMapping(value = "/create", method = RequestMethod.POST)
+    @Transactional
     public ModelAndView save(@ModelAttribute Customer customer, ModelAndView mav) {
         customer.setRowguid(UUID.randomUUID().toString());
         customer.setModifiedDate(Calendar.getInstance());
