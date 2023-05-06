@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title th:text="${title}"></title>
+    <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container">
+<h1 class="display-4 mb-4" th:text="${title}"></h1>
+<p th:text="${msg}"></p>
+<form method="post" action="/delete" th:object="${formModel}">
+    <input type="hidden" name="customerId" th:value="*{customerId}" />
+    <ul>
+        <li>Customer ID:    <span th:text="*{customerId}"></span></li>
+        <li>Title:          <span th:text="*{title}"></span></li>
+        <li>First Name:     <span th:text="*{firstName}"></span></li>
+        <li>Middle Name:    <span th:text="*{middleName}"></span></li>
+        <li>Last Name:      <span th:text="*{lastName}"></span></li>
+        <li>Suffix:         <span th:text="*{suffix}"></span></li>
+        <li>Company Name:   <span th:text="*{companyName}"></span></li>
+        <li>Sales Person:   <span th:text="*{salesPerson}"></span></li>
+        <li>Phone:          <span th:text="*{phone}"></span></li>
+        <li>Email Address:  <span th:text="*{emailAddress}"></span></li>
+    </ul>
+    <input type="submit" class="btn btn-primary" value="Delete" />
+</form>
+</body>
+</html>
