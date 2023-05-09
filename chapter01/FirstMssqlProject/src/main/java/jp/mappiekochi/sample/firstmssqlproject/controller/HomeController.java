@@ -15,7 +15,7 @@ public class HomeController {
     @RequestMapping("/")
     public ModelAndView index(ModelAndView mav) {
         mav.setViewName("index");
-        mav.addObject("title", "[AdventureWorksLT2019].[SalesLT].[Customer]");
+        mav.addObject("title", "[AdventureWorks2022].[SalesLT].[Customer]");
         mav.addObject("msg", "テーブルデータを取得しました。");
         Iterable<Customer> data = repository.findAll();
         mav.addObject("data", data);
